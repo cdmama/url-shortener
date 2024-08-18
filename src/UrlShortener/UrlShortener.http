@@ -1,0 +1,38 @@
+@UrlShortener_HostAddress = http://localhost:5137
+
+GET {{UrlShortener_HostAddress}}/ping
+Accept: application/json
+
+###
+
+POST {{UrlShortener_HostAddress}}/encode
+Content-Type: application/json
+
+{
+    "url": "https://www.youtube.com"
+}
+
+###
+
+POST {{UrlShortener_HostAddress}}/encode
+Content-Type: application/json
+
+{
+    "url": "https://www.google.com"
+}
+
+###
+
+POST {{UrlShortener_HostAddress}}/decode
+Content-Type: application/json
+
+{
+    "shortUrl": "{{UrlShortener_HostAddress}}/AQAAAA"
+}
+
+###
+
+GET {{UrlShortener_HostAddress}}/AQAAAA
+Accept: application/json
+
+###
